@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMA Kayıt</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.ortala{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.register-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"],
+.input-group input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 95%;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group label {
+    margin-right: 10px;
+}
+
+.radio-group input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-group label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.radio-group label::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.radio-group input[type="radio"]:checked + label::before {
+    background-color: #007bff;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.navbar{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 5px;
+            width: 70%;
+            margin: 0 auto;
+            
+        }
+
+        .logo img {
+    width: 50px;  /* Fixed width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (min-width: 768px) {
+    .logo img {
+        width: 100px; /* Larger size on wider screens */
+    }
+}
+.logo a {
+    text-decoration: none; /* Altı çizili metni kaldırır */
+}
+
+        .navbar a{
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .navbar button{
+            padding: 15px 30px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+
+        .navbar button:hover{
+            background-color: #014c9c;
+            transition: .5s;  
+        }
+
+@media screen and (max-width: 600px) {
+    .register-container {
+        width: 90%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.php">
+            <img src="logo/logomain.png" alt="FMA LOGO">
+        </a>
+        </div>
+        <div style="display: flex;">
+            <a href="./login.php"> <button>Giriş Yap</button> </a>
+            <a href="./register.html"> <button>Kayıt Ol</button> </a>
+        </div>
+    </div>
+
+    <div class="ortala">
+        <div class="register-container">
+            <form action="process-signup.php" method="POST">
+                <h2>Kayıt Ol</h2>
+                <div class="input-group">
+                    <label for="fullname">Ad Soyad</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">E mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="passwordconfirm">Şifrenizi tekrar giriniz</label>
+                    <input type="password" id="passwordconfirm" name="passwordconfirm" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Telefon No</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+               
+                <div class="input-group">
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Erkek</label>
+                        <input type="radio" id="female" name="gender" value="female" required>
+                        <label for="female">Kadın</label>
+                    </div>
+                </div>
+                <button type="submit">Kayıt Ol</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>
